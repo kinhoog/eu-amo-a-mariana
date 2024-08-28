@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        img {
+            width: 60%;
+            max-width: 400px;
+            height: auto;
+        }
+        .question {
+            margin-top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #007bff;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #nao-btn {
+            background-color: #ff5733;
+            color: #fff;
+        }
+        #nao-btn:hover {
+            background-color: #ff3300;
+        }
+        /* Overlay invisível para capturar o clique no botão "NÃO" */
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: calc(50% + 85px); /* Ajusta a posição para o botão NÃO */
+            transform: translateX(-50%);
+            width: 120px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question">Mari, você me ama?</div>
+        <img src="gato-burro.jpg" alt="Imagem">
+        <div class="buttons">
+            <button class="btn" onclick="responderSim()">SIM</button>
+            <div id="overlay" onclick="responderNao()"></div> <!-- Overlay invisível -->
+            <button class="btn" id="nao-btn" disabled>NÃO</button>
+        </div>
+    </div>
+    <script>
+        function responderSim() {
+            alert('Também me amo <3');
+        }
+
+        function responderNao() {
+            alert('Morra.');
+        }
+    </script>
+</body>
+</html>
